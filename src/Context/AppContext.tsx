@@ -14,7 +14,7 @@ type StudentList = Array<Student> | [];
 const AppContext = createContext<any>(null);
 
 const AppProvider = (({ children } : IContextProp) => {
-    const [studentList, setStudentList] = useState<Array<Student>>([]);
+    const [studentList, setStudentList] = useState<StudentList>([]);
 
     const addStudent = useCallback(
         ({ id, name }: Student) => {

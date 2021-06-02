@@ -1,5 +1,5 @@
 import { useAppContext } from "Context/AppContext"
-import { useCallback, useContext, useState } from "react"
+import { useCallback, useState } from "react"
 
 const StudentInput = () => {
     const { addStudent, resetStudent } = useAppContext();
@@ -25,8 +25,8 @@ const StudentInput = () => {
             <span>Name : </span>
             <input value={name} onChange={({ target: { value }}) => { setName(value) }}/>
         </div>
-        <button onClick={() => { addStudent({ id, name }) }}>ADD</button>
-        <button onClick={() => { resetStudent({ id, name }) }}> RESET </button>
+        <button onClick={() => { addStudentToList() }}>ADD</button>
+        <button onClick={() => { resetStudent() }}> RESET </button>
     </div>
     )
 }
