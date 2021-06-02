@@ -4,6 +4,16 @@ export const useCounterCalculator = () => {
     const [answer, setAnswer] = useState<number>(0);
     const [first_input, setFirstInput] = useState<number>(0);
     const [second_input, setSecondInput] = useState<number>(0);
+    const [numberOne_input, setNumberOne] = useState<string>("");
+    const [numberTwo_input, setNumberTwo] = useState<string>("");
+    const [numberThree_input, setNumberThree] = useState<string>("");
+    const [numberFour_input, setNumberFour] = useState<string>("");
+    const [numberFive_input, setNumberFive] = useState<string>("");
+    const [numberSix_input, setNumberSix] = useState<string>("");
+    const [numberSeven_input, setNumberSeven] = useState<string>("");
+    const [numberEight_input, setNumberEight] = useState<string>("");
+    const [numberNine_input, setNumberNine] = useState<string>("");
+    const [numberZero_input, setNumberZero] = useState<string>("");
 
     const plus = useCallback(
         () => {
