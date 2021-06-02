@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback, useEffect } from "react";
+import { createContext, useState, useCallback, useEffect, useContext } from "react";
 
 interface IContextProp {
     children: any
@@ -63,4 +63,12 @@ const AppProvider = (({ children } : IContextProp) => {
     </AppContext.Provider>
 })
 
-export { AppContext, AppProvider }
+const useAppContext = () => {
+    const context = useContext(AppContext);
+    if (context === undefined) {
+        throw new Error("Error context undefined");
+    }
+    return context
+}
+
+export { AppContext, AppProvider, useAppContext }

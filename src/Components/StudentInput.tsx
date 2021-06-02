@@ -1,8 +1,8 @@
-import { AppContext } from "Context/AppContext"
+import { useAppContext } from "Context/AppContext"
 import { useCallback, useContext, useState } from "react"
 
 const StudentInput = () => {
-    const { studentList, setStudentList, addStudent, resetStudent } = useContext(AppContext);
+    const { addStudent, resetStudent } = useAppContext();
     const [id, setId] = useState<number | string>('');
     const [name, setName] = useState<string>('');
 
