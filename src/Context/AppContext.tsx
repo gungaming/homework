@@ -17,7 +17,7 @@ const AppProvider = (({ children } : IContextProp) => {
     const [studentList, setStudentList] = useState<Array<Student>>([]);
 
     const addStudent = useCallback(
-        ({ id, name}: Student) => {
+        ({ id, name }: Student) => {
             setStudentList((prev) => {
                 const newData = [...prev];
                 newData.push({ id, name });
@@ -39,6 +39,13 @@ const AppProvider = (({ children } : IContextProp) => {
         [],
     )
 
+    const resetStudent = useCallback(
+        () => {
+            setStudentList([])
+        },
+        [],
+    )
+
     useEffect(() => {
         console.log('studentList ', studentList);
     }, [studentList])
@@ -47,7 +54,8 @@ const AppProvider = (({ children } : IContextProp) => {
         studentList,
         setStudentList,
         addStudent,
-        removeStudent
+        removeStudent,
+        resetStudent
     }
 
     return <AppContext.Provider value ={ value }>

@@ -2,7 +2,7 @@ import { AppContext } from "Context/AppContext"
 import { useCallback, useContext, useState } from "react"
 
 const StudentInput = () => {
-    const { studentList, setStudentList, addStudent } = useContext(AppContext);
+    const { studentList, setStudentList, addStudent, resetStudent } = useContext(AppContext);
     const [id, setId] = useState<number | string>('');
     const [name, setName] = useState<string>('');
 
@@ -26,6 +26,7 @@ const StudentInput = () => {
             <input value={name} onChange={({ target: { value }}) => { setName(value) }}/>
         </div>
         <button onClick={() => { addStudent({ id, name }) }}>ADD</button>
+        <button onClick={() => { resetStudent({ id, name }) }}> RESET </button>
     </div>
     )
 }
